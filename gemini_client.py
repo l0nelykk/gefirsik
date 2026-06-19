@@ -12,14 +12,19 @@ def ask_gemini(user_input):
     log_event(f"User: {user_input}")
 
     payload = {
-        "contents": [
-            {
+            "contents": [
+                {
+                    "parts": [
+                        {"text": user_input}
+                    ]
+                }
+            ],
+            "systemInstruction": {
                 "parts": [
-                    {"text": f"{system_prompt}\n\nUser: {user_input}"}
+                    {"text": system_prompt}
                 ]
             }
-        ]
-    }
+        }
 
     try:
         response = requests.post(url, json=payload, timeout=30)
