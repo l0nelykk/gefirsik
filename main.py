@@ -4,7 +4,7 @@ from gemini_client import ask_gemini
 from commands import handle_user_input
 
 print("gefirsik started. Type 'exit' to quit.")
-
+print()
 while True:
     user_input = input("> ")
 
