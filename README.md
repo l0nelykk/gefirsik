@@ -1,10 +1,19 @@
 ​gefirsik
-​An Android assistant powered by the Gemini API that executes basic functions such as opening apps, capturing screenshots, and handling messaging based on structured JSON commands.
-​Prerequisites
-​Python 3+
-​Python dependencies: requests, python-dotenv
-​Google AI API key
-​Setup
+
+
+​An Android assistant powered by the Gemini API 
+that executes basic functions such as opening
+apps, capturing screenshots, and handling
+messaging based on structured JSON commands.
+​
+
+Prerequisites
+​
+-Python 3+
+​-Python dependencies: requests, python-dotenv
+​-Google AI API key
+​
+Setup
 ​Install the required Python packages:
 pip install requests python-dotenv
 ​Create a .env file in the root directory and add your API key:
