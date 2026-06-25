@@ -1,5 +1,8 @@
+__pycache__
+.git
 .env
-logs/
-__pycache__/
 test.py
 gcode.py
+ruprompt.txt
+ruprompt2.txt
+logs/
