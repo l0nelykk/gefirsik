@@ -31,12 +31,15 @@ while True:
         f.write(final_response)
     
     print(f"gefirsik: {final_response}")
-    os.system("cat gcode.py")
-    print("continue?")
     
-    sudo_opsec = input()
-    if sudo_opsec == 'n':
+    print("\ncontinue?")
+    
+    if input() == 'n':
         continue
 
-    exec(open('gcode.py').read())
-    os.system('python gcode.py')
+    try:
+        exec(open('gcode.py').read())
+        os.system('python gcode.py')
+    except Exception as e:
+        print(f"Error: {e}")
+        continue
