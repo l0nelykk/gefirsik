@@ -5,7 +5,7 @@ load_dotenv()
 
 API_KEY = os.getenv("GEMINI_API_KEY")
 LOG_FILE = "logs/gefirsik.log"
-PROMPT_FILE = "prompt.txt"
+PROMPT_FILE = "prompt2.txt"
 
 def get_api_key():
     if not API_KEY:
