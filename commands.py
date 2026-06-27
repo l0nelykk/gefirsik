@@ -1,41 +1,6 @@
 import json
 import subprocess
 
-def open_app(app_name):
-    try:
-        subprocess.run(["am", "start", "-n", app_name], check=True)
-        return f"Opened {app_name}"
-    except Exception as e:
-        return f"Failed to open {app_name}: {e}"
-
-def send_message(contact, text):
-    """
-    Отправляет SMS-сообщение на указанный номер.
-    """
-    try:
-        # Используем Android intent для отправки SMS без открытия интерфейса (в фоне)
-        # Если нужно открыть приложение SMS с предзаполненным текстом, 
-        # то вместо 'send_to' лучше использовать 'android.intent.action.SENDTO'
-        cmd = [
-            "am", "start", "-a", "android.intent.action.SENDTO", 
-            "-d", f"smsto:{contact}", 
-            "--es", "sms_body", text, 
-            "--ez", "exit_on_sent", "true"
-        ]
-        subprocess.run(cmd, check=True)
-        
-        # Альтернативный вариант, если устройство рутовано или это кастомный шелл,
-        # можно слать напрямую через service call или эмулировать нажатия.
-        # Но через INTENT — самый безопасный и стандартный способ.
-        
-        return f"Sending '{text}' to {contact} (Intent dispatched)"
-    except Exception as e:
-        return f"Failed to send message to {contact}: {e}"
-    
-
-def take_screenshot():
-    return "Screenshot taken (placeholder)"
-
 def execute_command_from_json(json_str):
     try:
         data = json.loads(json_str)
